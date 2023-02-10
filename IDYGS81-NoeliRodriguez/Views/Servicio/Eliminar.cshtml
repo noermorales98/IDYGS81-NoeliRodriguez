@@ -1,0 +1,25 @@
+﻿@model IDYGS81_NoeliRodriguez.Models.Servicio
+
+@{
+    Layout = "_LayoutDashboard";
+}
+
+<div class="container-fuild">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-body">
+                <form asp-action="Eliminar" method="post">
+                    <h1 class="text-danger">¿Seguro que quiere eliminar?</h1>
+                    <div class="form-group" style="display:none;">
+                        <label asp-for="PkServicio" class="control-label">Id</label>
+                        <input asp-for="PkServicio" readonly class="form-control" />
+                    </div>
+                    <div class="form-group mt-3">
+                        <a class="btn btn-secondary" asp-controller="Servicio" asp-action="Index">Atras</a>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
