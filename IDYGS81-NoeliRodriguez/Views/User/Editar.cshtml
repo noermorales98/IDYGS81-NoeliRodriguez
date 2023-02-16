@@ -1,0 +1,52 @@
+﻿@model IDYGS81_NoeliRodriguez.Models.Usuario
+
+@{
+    Layout = "_LayoutDashboard";
+}
+
+<div class="container-fuild">
+    <div class="offset-12">
+        <h1>Editando un servicio</h1>
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"><strong>Editar usuario</strong></h1>
+            </div>
+            <div class="card-body">
+                <form asp-action="Editar" method="post">
+                    <div class="form-group" style="display:none;">
+                        <label asp-for="PkUsuario" class="control-label">Id</label>
+                        <input asp-for="PkUsuario" readonly class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Nombre" class="control-label">Nombre</label>
+                        <input asp-for="Nombre" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Apellido" class="control-label">Apellido</label>
+                        <input asp-for="Apellido" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FkRol" class="control-label">Apellido</label>
+                        <select asp-for="FkRol" name="select">
+                            <option value={1}>Admin</option>
+                            <option value={2} selected>Publico</option>
+                            <option value={3}>Lector</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Correo" class="control-label">Correo</label>
+                        <input asp-for="Correo" type="email" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label">Contraseña</label>
+                        <input asp-for="Password" class="form-control" type="password" value="-" />
+                    </div>
+                    <div class="form-group mt-3">
+                        <button class="btn btn-secondary d-block mx-auto align-self-auto">Actualizar</button>
+                    </div>
+                </form>
+                <a asp-controller="User" asp-action="Index">Atras</a>
+            </div>
+        </div>
+    </div>
+</div>

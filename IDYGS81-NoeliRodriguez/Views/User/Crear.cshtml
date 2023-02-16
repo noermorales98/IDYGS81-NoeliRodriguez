@@ -1,0 +1,44 @@
+﻿@model IDYGS81_NoeliRodriguez.Models.Usuario
+
+@{
+    Layout = "_LayoutDashboard";
+}
+
+<div class="container-fuild">
+    <div class="offset-12">
+        <h1>Creando un nuevo servicio</h1>
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"><strong>Crear un nuevo Usuario</strong></h1>
+            </div>
+            <div class="card-body">
+                <form asp-action="Crear" method="post">
+                    <div class="form-group">
+                        <label asp-for="Nombre" class="control-label">Nombre</label>
+                        <input asp-for="Nombre" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Apellido" class="control-label">Apellido</label>
+                        <input asp-for="Apellido" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FkRol" class="control-label">Rol</label>
+                        <input asp-for="FkRol" type="number" min="1" max="3" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Correo" class="control-label">Correo</label>
+                        <input asp-for="Correo" type="email" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label">Contraseña</label>
+                        <input asp-for="Password" type="password" class="form-control" />
+                    </div>
+                    <div class="form-group mt-3">
+                        <button class="btn btn-secondary d-block mx-auto align-self-auto">Guardar</button>
+                    </div>
+                </form>
+                <a asp-controller="User" asp-action="Index">Atras</a>
+            </div>
+        </div>
+    </div>
+</div>
