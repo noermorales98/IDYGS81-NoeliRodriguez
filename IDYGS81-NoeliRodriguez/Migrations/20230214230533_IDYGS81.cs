@@ -48,19 +48,30 @@ namespace IDYGS81_NoeliRodriguez.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Usuarios", x => x.PkUsuario);
+                    table.ForeignKey(
+                        name: "FK_Usuarios_Roles_FkRol",
+                        column: x => x.FkRol,
+                        principalTable: "Roles",
+                        principalColumn: "PkRol",
+                        onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Usuarios_FkRol",
+                table: "Usuarios",
+                column: "FkRol");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Roles");
-
-            migrationBuilder.DropTable(
                 name: "Servicios");
 
             migrationBuilder.DropTable(
                 name: "Usuarios");
+
+            migrationBuilder.DropTable(
+                name: "Roles");
         }
     }
 }

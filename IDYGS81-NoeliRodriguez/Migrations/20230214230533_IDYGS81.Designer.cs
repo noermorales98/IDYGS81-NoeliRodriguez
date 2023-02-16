@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IDYGS81_NoeliRodriguez.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230123182218_IDYGS81")]
+    [Migration("20230214230533_IDYGS81")]
     partial class IDYGS81
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -77,7 +77,20 @@ namespace IDYGS81_NoeliRodriguez.Migrations
 
                     b.HasKey("PkUsuario");
 
+                    b.HasIndex("FkRol");
+
                     b.ToTable("Usuarios");
+                });
+
+            modelBuilder.Entity("IDYGS81_NoeliRodriguez.Models.Usuario", b =>
+                {
+                    b.HasOne("IDYGS81_NoeliRodriguez.Models.Rol", "Roles")
+                        .WithMany()
+                        .HasForeignKey("FkRol")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Roles");
                 });
 #pragma warning restore 612, 618
         }
