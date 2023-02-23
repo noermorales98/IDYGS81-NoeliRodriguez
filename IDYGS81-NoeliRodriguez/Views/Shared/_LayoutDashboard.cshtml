@@ -41,8 +41,8 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="#">
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Servicio" asp-action="Index">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
@@ -58,19 +58,18 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                   aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link" asp-controller="Servicio" asp-action="Index">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Tablas</span>
+                    <span>Servicios</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Datos:</h6>
-                        <a class="collapse-item" asp-controller="Servicio" asp-action="Index">Servicios</a>
-                        <a class="collapse-item" asp-controller="User" asp-action="Index">Usuarios</a>
-                        <a class="collapse-item" href="cards.html">Roles</a>
-                    </div>
-                </div>
+                <a class="nav-link" asp-controller="User" asp-action="Index">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Usuarios</span>
+                </a>
+                <a class="nav-link" asp-controller="Rol" asp-action="Index">
+                    <i class="fas fa-fw fa-briefcase"></i>
+                    <span>Roles</span>
+                </a>
             </li>
 
 @*            <!-- Nav Item - Utilities Collapse Menu -->
@@ -91,9 +90,6 @@
                     </div>
                 </div>
             </li>*@
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
 
             @*
             <!-- Heading -->

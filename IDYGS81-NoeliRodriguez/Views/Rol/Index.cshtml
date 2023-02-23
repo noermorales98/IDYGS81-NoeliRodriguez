@@ -1,4 +1,4 @@
-﻿@model IEnumerable<IDYGS81_NoeliRodriguez.Models.Servicio>
+﻿@model IEnumerable<IDYGS81_NoeliRodriguez.Models.Rol>
 @{
     Layout = "_LayoutDashboard";
 }
@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="~/css/site.css">
 <div class="row">
     <div class="offset-9 col-3 mb-3">
-        <a asp-action="Crear" id="btn-crear" asp-controller="Servicio" class="btn-success d-block mx-auto btn-crear">
+        <a asp-action="Crear" id="btn-crear" asp-controller="Rol" class="btn-success d-block mx-auto btn-crear">
 
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #fff;transform: ;msFilter:;"><path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4z"></path><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path></svg>
         </a>
@@ -19,7 +19,7 @@
     <div class="offset-12">
         <div class="card">
             <div class="card-header bg-white">
-                <h1 class="text-dark"><strong>Lista de servicios</strong></h1>
+                <h1 class="text-dark"><strong>Lista de roles</strong></h1>
 
             </div>
 
@@ -31,8 +31,8 @@
                         <table class="table table-bordered align-middle" id="tblUsuarios" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>@Html.DisplayNameFor(x=>x.Titulo)</th>
-                                    <th>@Html.DisplayNameFor(x=>x.Descripcion)</th>
+                                    <th>@Html.DisplayNameFor(x=>x.PkRol)</th>
+                                    <th>@Html.DisplayNameFor(x=>x.Nombre)</th>
                                     <th> Acciones</th>
                                 </tr>
                             </thead>
@@ -42,15 +42,15 @@
                                 {
 
                                     <tr>
-                                        <td> @Html.DisplayFor(x => item.Titulo)</td>
-                                        <td> @Html.DisplayFor(x => item.Descripcion)</td>
+                                        <td> @Html.DisplayFor(x => item.PkRol)</td>
+                                        <td> @Html.DisplayFor(x => item.Nombre)</td>
 
                                         <td>
-                                            <a class="btn btn-warning" asp-action="Editar" asp-route-id=@item.PkServicio>
+                                            <a class="btn btn-warning" asp-action="Editar" asp-route-id=@item.PkRol>
                                                 Editar
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);"><path d="m18.988 2.012 3 3L19.701 7.3l-3-3zM8 16h3l7.287-7.287-3-3L8 13z"></path><path d="M19 19H8.158c-.026 0-.053.01-.079.01-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .896-2 2v14c0 1.104.897 2 2 2h14a2 2 0 0 0 2-2v-8.668l-2 2V19z"></path></svg>
                                             </a>
-                                            <a class="btn btn-danger" asp-action="Eliminar" asp-route-id=@item.PkServicio>
+                                            <a class="btn btn-danger" asp-action="Eliminar" asp-route-id=@item.PkRol>
                                                 Eliminar
                                             </a>
                                         </td>

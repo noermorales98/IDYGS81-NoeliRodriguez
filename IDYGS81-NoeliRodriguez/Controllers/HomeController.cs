@@ -1,4 +1,5 @@
-﻿using IDYGS81_NoeliRodriguez.Models;
+﻿using IDYGS81_NoeliRodriguez.Context;
+using IDYGS81_NoeliRodriguez.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,15 +13,18 @@ namespace IDYGS81_NoeliRodriguez.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var res = _context.Servicios.ToList();
+            return View(res);
         }
 
         public IActionResult Privacy()
