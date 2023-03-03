@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace IDYGS81_NoeliRodriguez.Controllers
 {
@@ -25,6 +26,11 @@ namespace IDYGS81_NoeliRodriguez.Controllers
         [HttpGet]
         public IActionResult Crear()
         {
+            ViewBag.Roles = _context.Roles.Select(p => new SelectListItem()
+            {
+                Text = p.Nombre,
+                Value = p.PkRol.ToString()
+            });
             return View();
         }
 
@@ -57,6 +63,11 @@ namespace IDYGS81_NoeliRodriguez.Controllers
         {
             try
             {
+                ViewBag.Roles = _context.Roles.Select(p => new SelectListItem()
+                {
+                    Text = p.Nombre,
+                    Value = p.PkRol.ToString()
+                });
                 return View(_context.Usuarios.Find(id));
             }
             catch (Exception ex)

@@ -1,6 +1,7 @@
 ﻿using IDYGS81_NoeliRodriguez.Context;
 using IDYGS81_NoeliRodriguez.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
@@ -25,6 +26,7 @@ namespace IDYGS81_NoeliRodriguez.Controllers
         [HttpGet]
         public IActionResult Crear()
         {
+            
             return View();
         }
 

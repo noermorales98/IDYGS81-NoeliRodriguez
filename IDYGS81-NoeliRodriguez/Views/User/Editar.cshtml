@@ -26,11 +26,8 @@
                         <input asp-for="Apellido" class="form-control" />
                     </div>
                     <div class="form-group">
-                        <label asp-for="FkRol" class="control-label">Apellido</label>
-                        <select asp-for="FkRol" name="select">
-                            <option value={1}>Admin</option>
-                            <option value={2} selected>Publico</option>
-                            <option value={3}>Lector</option>
+                        <select asp-for="FkRol" asp-items="ViewBag.Roles" class="select2-placeholder-multiple form-control">
+                            <option value="">Selecciona</option>
                         </select>
                     </div>
                     <div class="form-group">
