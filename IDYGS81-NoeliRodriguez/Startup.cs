@@ -53,6 +53,9 @@ namespace IDYGS81_NoeliRodriguez
             {
                 endpoints.MapControllerRoute(
                     name: "default",
+                    pattern: "{controller=Login}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
+                    name: "servicio",
                     pattern: "{controller=Servicio}/{action=Index}/{id?}");
 
                 endpoints.MapControllerRoute(

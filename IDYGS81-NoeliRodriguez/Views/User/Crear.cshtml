@@ -6,10 +6,10 @@
 
 <div class="container-fuild">
     <div class="offset-12">
-        <h1>Creando un nuevo servicio</h1>
+        <h1>Editando un servicio</h1>
         <div class="card border">
             <div class="card-header bg-dark">
-                <h1 class="text-white"><strong>Crear un nuevo Usuario</strong></h1>
+                <h1 class="text-white"><strong>Crear usuario</strong></h1>
             </div>
             <div class="card-body">
                 <form asp-action="Crear" method="post">
@@ -32,10 +32,10 @@
                     </div>
                     <div class="form-group">
                         <label asp-for="Password" class="control-label">Contraseña</label>
-                        <input asp-for="Password" type="password" class="form-control" />
+                        <input asp-for="Password" class="form-control" type="password" value="-" />
                     </div>
                     <div class="form-group mt-3">
-                        <button class="btn btn-secondary d-block mx-auto align-self-auto">Guardar</button>
+                        <button class="btn btn-secondary d-block mx-auto align-self-auto">Actualizar</button>
                     </div>
                 </form>
                 <a asp-controller="User" asp-action="Index">Atras</a>
